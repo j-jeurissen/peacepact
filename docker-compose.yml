@@ -1,0 +1,8 @@
+peacekeeper-registration-service:
+  build: registration-service
+  ports:
+    - "8080:8080"
+  links:
+    - mongodb
+mongodb:
+  image: mongo
