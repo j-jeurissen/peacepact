@@ -1,5 +1,5 @@
-peacekeeper-registration-service:
-  build: registration-service
+peacekeeper-service:
+  build: peacekeeper-service
   ports:
     - "8080:8080"
   links:
