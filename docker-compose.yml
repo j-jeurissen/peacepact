@@ -1,8 +1,15 @@
 peacekeeper-service:
   build: peacekeeper-service
   ports:
-    - "8080:8080"
+    - "8080"
   links:
     - mongodb
 mongodb:
   image: mongo
+ha_peacekeeper:
+ image: tutum/haproxy
+ #https://github.com/tutumcloud/haproxy
+ links:
+   - peacekeeper-service
+ ports:
+   - "8080:80"
