@@ -14,13 +14,6 @@ Simple project which demonstrates technologies of intrest.
   * Gradle support
 
 ## TODO
-### Functional
-* Registration page
-  * New peacekeepers can register
-* Invite mechanism
-  * Peacekeepers can recruit other peacekeepers with an refferal id to grow their peacekeeping army
-* View Peacekeepers Family Tree(switch to graph database)
-  * Every peacekeeper can view their own peacekeeping army
 
 ### Technical
 * Infra as code
@@ -40,6 +33,15 @@ Simple project which demonstrates technologies of intrest.
   * Transport data using protobuf
   * Versioning
   * Use limits on resources to fail fast before a service gets overloaded
+
+### Functional
+* Registration page
+  * New peacekeepers can register
+* Invite mechanism
+  * Peacekeepers can recruit other peacekeepers with an refferal id to grow their peacekeeping army
+* View Peacekeepers Family Tree(switch to graph database)
+  * Every peacekeeper can view their own peacekeeping army
+
 ## Functional Story
 The story is that every peacekeeper, that has registered and signed a peace pact, can invite other peacekeepers and they can invite more peace keepers and so on.
 
