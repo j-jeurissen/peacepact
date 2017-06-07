@@ -1,0 +1,43 @@
+{
+    "taskDefinition": {
+        "volumes": [],
+        "containerDefinitions": [
+            {
+                "environment": [],
+                "links": [
+                    "mongodb"
+                ],
+                "image": "jjeurissen/peacepact-peacekeeper-service:latest",
+                "name": "peacekeeper-service",
+                "mountPoints": [],
+                "volumesFrom": [],
+                "memory": 512,
+                "portMappings": [
+                    {
+                        "hostPort": 0,
+                        "containerPort": 8080,
+                        "protocol": "tcp"
+                    }
+                ],
+                "essential": true,
+                "cpu": 0
+            },
+            {
+                "environment": [],
+                "volumesFrom": [],
+                "image": "mongo",
+                "name": "mongodb",
+                "mountPoints": [],
+                "memory": 128,
+                "cpu": 0,
+                "essential": true,
+                "portMappings": []
+            }
+        ],
+        "placementConstraints": [],
+        "taskDefinitionArn": "arn:aws:ecs:eu-west-1:705778231977:task-definition/peacepact:6",
+        "family": "peacepact",
+        "revision": 6,
+        "status": "ACTIVE"
+    }
+}

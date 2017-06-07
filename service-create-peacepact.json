@@ -1,0 +1,18 @@
+{
+  "cluster": "peacepact",
+  "serviceName": "peacepact",
+  "taskDefinition": "arn:aws:ecs:eu-west-1:705778231977:task-definition/peacepact:6",
+  "loadBalancers": [
+    {
+      "targetGroupArn": "arn:aws:elasticloadbalancing:eu-west-1:705778231977:targetgroup/peacepact-peacepact-default/43175bab1d6e3537",
+      "containerName": "peacekeeper-service",
+      "containerPort": 8080
+    }
+  ],
+  "desiredCount": 1,
+  "role": "/ecs/peacepact_ecs_lb_role",
+  "deploymentConfiguration": {
+    "maximumPercent": 100,
+    "minimumHealthyPercent": 0
+  }
+}

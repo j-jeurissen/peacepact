@@ -1,0 +1,24 @@
+{
+  "family": "peacepact",
+  "containerDefinitions": [
+    {
+      "name": "peacekeeper-service",
+      "image": "jjeurissen/peacepact-peacekeeper-service:latest",
+      "memory": 512,
+      "links": [
+        "mongodb"
+      ],
+      "portMappings": [
+        {
+          "containerPort": 8080,
+          "protocol": "tcp"
+        }
+      ]
+    },
+    {
+      "name": "mongodb",
+      "image": "mongo",
+      "memory": 128
+    }
+  ]
+}
