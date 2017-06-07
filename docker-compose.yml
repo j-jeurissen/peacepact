@@ -4,13 +4,14 @@ services:
     build:
       context: ./peacekeeper-service
     image: jjeurissen/peacepact-peacekeeper-service:latest
-
     ports:
       - "8080"
     links:
       - mongodb
+
   mongodb:
     image: mongo
+
   ha_peacekeeper:
    image: tutum/haproxy
    #https://github.com/tutumcloud/haproxy
