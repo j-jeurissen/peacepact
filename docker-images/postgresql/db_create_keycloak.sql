@@ -1,0 +1,2 @@
+CREATE SCHEMA keycloak;
+GRANT ALL PRIVILEGES ON DATABASE keycloak TO keycloak;

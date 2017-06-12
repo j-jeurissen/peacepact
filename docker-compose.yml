@@ -8,6 +8,7 @@ services:
       - "8080"
     links:
       - mongodb
+      - keycloak
 
   mongodb:
     image: mongo
@@ -19,3 +20,24 @@ services:
      - peacekeeper-service
    ports:
      - "8080:80"
+  keycloak:
+  #TODO: http://blog.keycloak.org/2015/04/running-keycloak-cluster-with-docker.html
+    image: jboss/keycloak
+    environment:
+      KEYCLOAK_USER: admin
+      KEYCLOAK_PASSWORD: admin
+    links:
+      - keycloak-relational-database
+
+
+  keycloak-relational-database:
+      build:
+        context: ./docker-images/postgresql
+      image: keycloak-postgresql-database
+      ports:
+      - "5432:5432"
+      environment:
+          POSTGRES_PASSWORD: keycloak
+          POSTGRES_USER: keycloak
+          POSTGRES_DATABASE: keycloak
+          POSTGRES_DB: keycloak
