@@ -12,7 +12,8 @@ Simple project which demonstrates technologies of intrest.
 * Dependency and build management
   * Maven support
   * Gradle support
-
+* Security
+  * keycloak server
 ## TODO
 
 ### Technical
