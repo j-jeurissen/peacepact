@@ -8,15 +8,41 @@ services:
       - "8080"
     links:
       - mongodb
+      - keycloak
 
   mongodb:
     image: mongo
 
   ha_peacekeeper:
    image: dockercloud/haproxy
+   #https://github.com/tutumcloud/haproxy
    links:
      - peacekeeper-service
    ports:
      - "8080:80"
    volumes:
-         - /var/run/docker.sock:/var/run/docker.sock
+     - /var/run/docker.sock:/var/run/docker.sock
+
+  keycloak:
+  #TODO: http://blog.keycloak.org/2015/04/running-keycloak-cluster-with-docker.html
+    image: jboss/keycloak
+    environment:
+      KEYCLOAK_USER: admin
+      KEYCLOAK_PASSWORD: admin
+    ports:
+      - "8081:8080"
+    links:
+      - keycloak-relational-database
+
+
+  keycloak-relational-database:
+      build:
+        context: ./docker-images/postgresql
+      image: keycloak-postgresql-database
+      ports:
+      - "5432:5432"
+      environment:
+          POSTGRES_PASSWORD: keycloak
+          POSTGRES_USER: keycloak
+          POSTGRES_DATABASE: keycloak
+          POSTGRES_DB: keycloak
