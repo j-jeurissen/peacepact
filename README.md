@@ -4,13 +4,13 @@ Simple project which demonstrates technologies of intrest.
 * Infra-as-code
   * docker-compose
 * Scalable
-  * HA proxy(+docker scale)
+  * HA proxy(+docker-compose scale)
 * Microservice
   * Spring boot
 * Storage
   * Mongodb
-* Dependency and build management
-  * Maven support
+* Dependency and build management(Choose one)
+  * Maven support 
   * Gradle support
 * Security
   * keycloak server
