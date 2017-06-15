@@ -13,9 +13,10 @@ services:
     image: mongo
 
   ha_peacekeeper:
-   image: tutum/haproxy
-   #https://github.com/tutumcloud/haproxy
+   image: dockercloud/haproxy
    links:
      - peacekeeper-service
    ports:
      - "8080:80"
+   volumes:
+         - /var/run/docker.sock:/var/run/docker.sock
