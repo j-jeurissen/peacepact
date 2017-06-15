@@ -14,12 +14,15 @@ services:
     image: mongo
 
   ha_peacekeeper:
-   image: tutum/haproxy
+   image: dockercloud/haproxy
    #https://github.com/tutumcloud/haproxy
    links:
      - peacekeeper-service
    ports:
      - "8080:80"
+   volumes:
+     - /var/run/docker.sock:/var/run/docker.sock
+
   keycloak:
   #TODO: http://blog.keycloak.org/2015/04/running-keycloak-cluster-with-docker.html
     image: jboss/keycloak
