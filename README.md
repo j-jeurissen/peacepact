@@ -10,7 +10,7 @@ Simple project which demonstrates technologies of intrest.
 * Storage
   * Mongodb
 * Dependency and build management(Choose one)
-  * Maven support 
+  * Maven support (maven branch)
   * Gradle support
 * Security
   * keycloak server
