@@ -23,7 +23,7 @@ Simple project which demonstrates technologies of intrest.
   * Use Docker data volumes
     * make all containers save state
     * External backup state of running containers
-  * Security: Secrets,etc.
+  * Security: Integrate Keycloak into application, use Vault to manage secrets
 * Monitoring
 * Logging
   * Kibana
